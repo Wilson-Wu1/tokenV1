@@ -256,7 +256,7 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
         uint256 senderBalance = _balances[sender];
         require(senderBalance >=  amount, "ERC20: transfer amount exceeds balance");
         unchecked {
-            _balances[sender] = senderBalance - amountAfterBurn;
+            _balances[sender] = senderBalance - amount;
         }
         
         _balances[recipient] += amountAfterBurn;
